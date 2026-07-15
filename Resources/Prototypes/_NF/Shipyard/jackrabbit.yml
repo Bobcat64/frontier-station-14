@@ -33,10 +33,17 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Jackrabbit {1}'
+          mapNameTemplate: 'Jackrabbit {0}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: '14'
+            !type:ConfigurableSuffixNameGenerator
+            generator: PT
+            designator:
+              type: List
+              items:
+                - JKR
+                - JR0
+                - JR3
+                - JCK
         - type: StationJobs
           availableJobs:
             ContractorInterview: [ 0, 0 ]

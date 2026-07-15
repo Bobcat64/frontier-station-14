@@ -41,3 +41,16 @@
       max: 99
     - type: Alpha
       min: 1
+
+- type: suffixGenerator
+  id: PT
+  format: '{0}{1}-P{2}'
+  defaultDesignator:
+    type: Alpha
+    min: 2
+  designators:
+    - type: AlphaNumeric
+      min: 1
+    - type: Numeric
+      min: 0
+      max: 9

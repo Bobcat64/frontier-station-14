@@ -33,10 +33,16 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Balena {1}'
+          mapNameTemplate: 'Balena {0}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: '14'
+            !type:ConfigurableSuffixNameGenerator
+            generator: PT
+            designator:
+              type: List
+              items:
+                - BAL
+                - BL2
+                - BL4
         - type: StationJobs
           availableJobs:
             ContractorInterview: [ 0, 0 ]
